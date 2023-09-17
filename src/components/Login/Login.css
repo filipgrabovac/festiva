@@ -1,0 +1,21 @@
+.loginForm {
+    padding:60px;
+    display:flex;
+    flex-direction: column;
+    width: 50%;
+    height: 400px;
+    margin: auto;
+    margin-top: 10%;
+    align-items: center;
+    background-color: #2EC4B6;
+    box-shadow: 30px 30px 10px gray;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.button {
+    width: 400px;
+    height: 100px;
+    margin-top: 20px;
+    font-size: 30px;
+    color: black;
+}
