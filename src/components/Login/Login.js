@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import './Login.css'
 
-const Login = ({setRoute, setLoginState}) => {
+const Login = ({email, setEmail, setRoute, setLoginState}) => {
+    const [password, setPassword] = useState('');
+
     return (
         <div className='master'>
 
@@ -11,9 +13,9 @@ const Login = ({setRoute, setLoginState}) => {
             </div>
             
             <div className='loginForm br4'>
-                <input placeholder="email" type="email" className='bn br4 tc loginInput'/>
-                <input placeholder="lozinka" type="password" className='bn br4 tc loginInput'/>
-                <button className="grow mt1 f3 br4 bn mt4 w-50 h-25 b-l" onClick={(event) => {setRoute('homepage'); setLoginState(true)}}>Prijava</button>
+                <input placeholder="email" type="email" className='bn br4 tc loginInput' onChange={(event) => setEmail(event.target.value)}/>
+                <input placeholder="lozinka" type="password" className='bn br4 tc loginInput' onChange={(event) => setPassword(event.target.value)}/>
+                <button className="grow mt1 f3 br4 bn mt4 w-50 h-25 b-l" onClick={(event) => {if (email && password) {setLoginState(true); setRoute('homepage');}}}>Prijava</button>
             </div>
         </div>
     );
