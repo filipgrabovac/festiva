@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.07a00a1e.css",
-    "main.js": "/static/js/main.918c8310.js",
-    "static/js/787.7639cb21.chunk.js": "/static/js/787.7639cb21.chunk.js",
-    "static/media/background.jpg": "/static/media/background.70de71d67585afd0c88e.jpg",
-    "static/media/Festiva Logo.jpg": "/static/media/Festiva Logo.71e5b23763e55733bc5c.jpg",
-    "index.html": "/index.html",
-    "main.07a00a1e.css.map": "/static/css/main.07a00a1e.css.map",
-    "main.918c8310.js.map": "/static/js/main.918c8310.js.map",
-    "787.7639cb21.chunk.js.map": "/static/js/787.7639cb21.chunk.js.map"
+    "main.css": "/festiva/static/css/main.0ea683e8.css",
+    "main.js": "/festiva/static/js/main.cdf14af2.js",
+    "static/js/787.7639cb21.chunk.js": "/festiva/static/js/787.7639cb21.chunk.js",
+    "static/media/background.jpg": "/festiva/static/media/background.70de71d67585afd0c88e.jpg",
+    "static/media/Festiva Logo.jpg": "/festiva/static/media/Festiva Logo.71e5b23763e55733bc5c.jpg",
+    "index.html": "/festiva/index.html",
+    "main.0ea683e8.css.map": "/festiva/static/css/main.0ea683e8.css.map",
+    "main.cdf14af2.js.map": "/festiva/static/js/main.cdf14af2.js.map",
+    "787.7639cb21.chunk.js.map": "/festiva/static/js/787.7639cb21.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.07a00a1e.css",
-    "static/js/main.918c8310.js"
+    "static/css/main.0ea683e8.css",
+    "static/js/main.cdf14af2.js"
   ]
 }
