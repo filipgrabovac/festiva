@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import './Register.css';
 
-const Register = ({setRoute, name, setName, email, setEmail}) => {
+const Register = ({setRoute, name, setName, email, setEmail, setLoginState}) => {
     const [surname, setSurname] = useState('');
     const [nameInputState, setNameInputState] = useState(false);
     const [emailPasswordState, setEmailPasswordState] = useState(false);
@@ -20,20 +20,27 @@ const Register = ({setRoute, name, setName, email, setEmail}) => {
     }
 
     const handleArrowClick = (event) => {
-        setNameInputState(false);
+        if (nameInputState) {
+            setNameInputState(false);
         setPassword('');
+        } else {
+            setRoute('homepage');
+            setNameInputState(false);
+            setEmailPasswordState(false);
+        }
+     
     }
 
     const handlePasswordInput = (event) => {
         setPassword(event.target.value)
     }
     const handleRegistration = () => {
-
             setTimeout(()=>{
                 setRoute('homepage');
                 setNameInputState(false);
                 setEmailPasswordState(false);
-            }, 500)
+                setLoginState(true);
+            }, 200)
             
     }
 
@@ -45,17 +52,17 @@ const Register = ({setRoute, name, setName, email, setEmail}) => {
                 <input type='button' className='button ArrowIcon mh2 grow br4' onClick={handleArrowClick}/>
             </div>
 
-            {emailPasswordState && email  ?
+            {emailPasswordState ?
                 ''
              : 
-                (nameInputState && name ?      
+                (nameInputState ?      
                     <div className="flex flex-wrap flex-row">    
 
                         <div className='squareDown'></div>
 
                         <div className='Form'>
                             <input placeholder="email" type="email" className='bn br4 tc input' value={email} onChange={handleEmailInput} required={true}/>
-                            <input placeholder="lozinka" type="password" className='bn br4 tc input' value = {password} onChange={handlePasswordInput} required={true}/>
+                            <input placeholder="lozinka" type="password" className='bn br4 tc input' value={password} onChange={handlePasswordInput} required={true}/>
                             <button className="grow mt1 f3 br4 bn mt4 w-50 h-25 b-l" onClick={(event)=> {if (email && password) {handleRegistration();} }}>Prijava</button>
                         </div> 
 

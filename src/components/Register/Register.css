@@ -1,6 +1,7 @@
 .master {
     background-image: url('D:/Projects/festiva/background.jpg');
     background-repeat: repeat;
+    padding-top: 20px;
     height: 1080px;
     width: 100%;
     z-index: -1;
