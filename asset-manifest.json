@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/filipgrabovac/festiva/static/css/main.6ad4c8ba.css",
+    "main.js": "/filipgrabovac/festiva/static/js/main.76d11d62.js",
+    "static/js/787.bd934122.chunk.js": "/filipgrabovac/festiva/static/js/787.bd934122.chunk.js",
+    "static/media/background.jpg": "/filipgrabovac/festiva/static/media/background.70de71d67585afd0c88e.jpg",
+    "static/media/Festiva Logo.jpg": "/filipgrabovac/festiva/static/media/Festiva Logo.71e5b23763e55733bc5c.jpg",
+    "index.html": "/filipgrabovac/festiva/index.html",
+    "main.6ad4c8ba.css.map": "/filipgrabovac/festiva/static/css/main.6ad4c8ba.css.map",
+    "main.76d11d62.js.map": "/filipgrabovac/festiva/static/js/main.76d11d62.js.map",
+    "787.bd934122.chunk.js.map": "/filipgrabovac/festiva/static/js/787.bd934122.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6ad4c8ba.css",
+    "static/js/main.76d11d62.js"
+  ]
+}
