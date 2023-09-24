@@ -1,25 +1,25 @@
 .loginForm {
-    padding:60px;
+    padding:40px;
     display:flex;
     flex-direction: column;
     justify-content: center;
-    width: 500px;
-    height: 382px;
+    width: 350px;
+    height: 280px;
     margin:auto;
     margin-top: 10%;
     align-items: center;
     background-color: #2EC4B6;
     box-shadow: 0px 10px 20px rgba(128, 128, 128, 0.615);
-    border-radius: 50px;
+    border-radius: 30px;
     font-family: sans-serif; 
     outline: 5px solid #22a598;
     
 }
 
 .loginInput {
-    height: 70px;
-    width: 300px;
-    font-size: 30px;
+    height: 80px;
+    width: 240px;
+    font-size: 25px;
     margin: 1%;
     color: black;
     font-weight: bolder;
@@ -30,7 +30,7 @@
 }
 
 .button {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     border: none;
 }

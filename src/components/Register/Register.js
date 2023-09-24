@@ -63,7 +63,7 @@ const Register = ({setRoute, name, setName, email, setEmail, setLoginState}) => 
                         <div className='Form'>
                             <input placeholder="email" type="email" className='bn br4 tc input' value={email} onChange={handleEmailInput} required={true}/>
                             <input placeholder="lozinka" type="password" className='bn br4 tc input' value={password} onChange={handlePasswordInput} required={true}/>
-                            <button className="grow mt1 f3 br4 bn mt4 w-50 h-25 b-l" onClick={(event)=> {if (email && password) {handleRegistration();} }}>Prijava</button>
+                            <button className="grow mt1 f3 br4 bn mt4 w-75 h-50 b-l" onClick={(event)=> {if (email && password) {handleRegistration();} }}>Prijava</button>
                         </div> 
 
                         <div className='squareUp'></div>
@@ -76,7 +76,7 @@ const Register = ({setRoute, name, setName, email, setEmail, setLoginState}) => 
                         <div className='Form FormAnimation'>
                             <input placeholder="ime" type="name" className='bn br4 tc input' value = {name} onChange={handleNameInput} required={true}/>
                             <input placeholder="prezime" type="surname" className='bn br4 tc input' value = {surname} onChange={handleSurnameInput}/>
-                            <button className="grow mt1 f3 br4 bn mt4 w-50 h-25 b-l" onClick={(event)=> {if (name) setNameInputState(true)}}>Dalje</button>
+                            <button className="grow mt1 f3 br4 bn mt4 w-75 h-50 b-l" onClick={(event)=> {if (name) setNameInputState(true)}}>Dalje</button>
                         </div>
 
                         <div className='squareUp'></div>
