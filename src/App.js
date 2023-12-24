@@ -1,56 +1,59 @@
 import './App.css';
 import 'tachyons';
 import React, {useState} from 'react';
+import {createBrowserRouter, createRoutesFromElements, Route, RouterProvider} from 'react-router-dom';
+
+// layouts
+import Layout from './components/Layout/Layout';
+
+// components
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import Navigation from './components/Navigation/Navigation';
-import HomepagePost from './components/HomepagePost/HomepagePost';
+import About from './components/About/About';
+import Profile  from './components/Profile/Profile';
+import AboutPage from './components/AboutPage/AboutPage'
+import Posts from './components/Posts/Posts.js';
+import Post from './components/Post/Post.js';
 
 const App = () => {
-  const [route, setRoute] = useState('homepage');
+  sessionStorage.setItem('loginState', false);
+  sessionStorage.setItem('userEmail', '');
   const [loginState, setLoginState] = useState(false);
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
+  // raditi sa fetchevima iz baze a ne kao kopije stateova!!
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route path='/' element={<Layout />}>      
+        <Route index element={
+          <>
+            <Navigation loginState={loginState} setLoginState={setLoginState}/>
+            <About />
+            <Posts />
+          </>
+          }/>
+        <Route path = '/register' element={<Register setLoginState={setLoginState}/>} />
+        <Route path = '/login' element={<Login setLoginState={setLoginState}/>}/>
+        <Route path = '/profile' element={
+          <>
+            <Profile />
+          </>
+
+          }/>
+        <Route path = '/about' element = {
+          <div className='flex flex-column'>
+            <Navigation loginState={loginState} setLoginState={setLoginState}/>
+            <AboutPage />
+          </div>
+        }/>
+      </Route>
   
-  const handleLogoutClick = (event) => {
-    setRoute('login');
-    setLoginState(false);
-    setName('');
-    setEmail('');
-  }
+    )
+  )
 
   return (
-    <div>
-
-      {route === 'homepage' ? 
-        <div>
-          <Navigation 
-            setRoute = {setRoute}
-            loginState = {loginState}
-            email= {email}
-            handleLogoutClick={handleLogoutClick}
-          /> 
-        </div>
-        : route === 'register' ? 
-      <Register 
-        name = {name}
-        email = {email}
-        setName = {setName}
-        setEmail = {setEmail}
-        setRoute = {setRoute}
-        setLoginState = {setLoginState}
-      />
-      : (route === 'login' ?
-      <Login 
-        setRoute = {setRoute}
-        setLoginState = {setLoginState}
-        email = {setEmail}
-        setEmail = {setEmail}
-      /> :
-        <HomepagePost /> )
-      }
-
-    </div>
+    <>
+      <RouterProvider router={router} />
+    </>
   );
 }
 

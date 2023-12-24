@@ -1,11 +1,15 @@
 import React, {useState, useEffect} from "react";
 import './Register.css';
+import { NavLink, useNavigate } from "react-router-dom";
 
-const Register = ({setRoute, name, setName, email, setEmail, setLoginState}) => {
+const Register = ({setLoginState}) => {
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
     const [surname, setSurname] = useState('');
     const [nameInputState, setNameInputState] = useState(false);
     const [emailPasswordState, setEmailPasswordState] = useState(false);
     const [password, setPassword] = useState('');
+    const navigator = useNavigate();
 
     const handleNameInput = (event) => {
         setName(event.target.value)
@@ -22,34 +26,48 @@ const Register = ({setRoute, name, setName, email, setEmail, setLoginState}) => 
     const handleArrowClick = (event) => {
         if (nameInputState) {
             setNameInputState(false);
-        setPassword('');
+            setPassword('');
         } else {
-            setRoute('homepage');
             setNameInputState(false);
             setEmailPasswordState(false);
         }
-     
     }
 
     const handlePasswordInput = (event) => {
         setPassword(event.target.value)
     }
-    const handleRegistration = () => {
-            setTimeout(()=>{
-                setRoute('homepage');
-                setNameInputState(false);
-                setEmailPasswordState(false);
-                setLoginState(true);
-            }, 200)
-            
+    const handleRegistration = (event) => {
+        if (name && email && password) {
+            sessionStorage.setItem('user_email', email);
+            fetch('http://localhost:3000/register',{
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                user_name: name,
+                user_surname: surname,
+                user_email: email,
+                user_password: password
+            })
+            })
+            .then(res => res.json())
+            .then(res => {
+                if (res == "success") {
+                    setLoginState(true);
+                    navigator('/');
+                } else {
+                    console.log("smt is wrong");
+                }
+            })
+            .catch(err => console.log(err));
+        }        
     }
 
     return (
         <div className='master'>
 
             <div className='returnBar'>
-                <input type='button' className='button FestivaIcon mh2 grow br4' onClick={(event) => console.log('marmun')}/>
-                <input type='button' className='button ArrowIcon mh2 grow br4' onClick={handleArrowClick}/>
+                <NavLink to ='/' type='button' className='button FestivaIcon grow br4' onClick={(event) => console.log('marmun')} />
+                <input type='button' className='button ArrowIcon grow br4' onClick={handleArrowClick}/>
             </div>
 
             {emailPasswordState ?
@@ -60,11 +78,16 @@ const Register = ({setRoute, name, setName, email, setEmail, setLoginState}) => 
 
                         <div className='squareDown'></div>
 
-                        <div className='Form'>
-                            <input placeholder="email" type="email" className='bn br4 tc input' value={email} onChange={handleEmailInput} required={true}/>
-                            <input placeholder="lozinka" type="password" className='bn br4 tc input' value={password} onChange={handlePasswordInput} required={true}/>
-                            <button className="grow mt1 f3 br4 bn mt4 w-75 h-50 b-l" onClick={(event)=> {if (email && password) {handleRegistration();} }}>Prijava</button>
-                        </div> 
+                        <form className='Form'>
+                            <input placeholder="email" type="email" className='bn br3 tc input' value={email} 
+                                onChange={handleEmailInput} required={true}
+                            />
+                            <input placeholder="lozinka" type="password" className='bn br3 tc input' value={password} 
+                                onChange={handlePasswordInput} required={true}
+                            />
+                            <button className="grow mt1 f3 br4 bn mt4 w-75 h-50 b-l buttonRegister" 
+                                onClick={handleRegistration}>Prijava</button>
+                        </form> 
 
                         <div className='squareUp'></div>
 
@@ -73,11 +96,16 @@ const Register = ({setRoute, name, setName, email, setEmail, setLoginState}) => 
 
                         <div className='squareDown'></div>
                         
-                        <div className='Form FormAnimation'>
-                            <input placeholder="ime" type="name" className='bn br4 tc input' value = {name} onChange={handleNameInput} required={true}/>
-                            <input placeholder="prezime" type="surname" className='bn br4 tc input' value = {surname} onChange={handleSurnameInput}/>
-                            <button className="grow mt1 f3 br4 bn mt4 w-75 h-50 b-l" onClick={(event)=> {if (name) setNameInputState(true)}}>Dalje</button>
-                        </div>
+                        <form className='Form FormAnimation'>
+                            <input placeholder="ime" type="name" className='bn br3 tc input' value = {name} 
+                                onChange={handleNameInput} required={true}
+                            />
+                            <input placeholder="prezime" type="surname" className='bn br3 tc input' value = {surname} 
+                                onChange={handleSurnameInput}
+                            />
+                            <button className="grow mt1 f3 br4 bn mt4 w-75 h-50 b-l buttonRegister" 
+                                onClick={(event)=> {if (name) setNameInputState(true)}}>Dalje</button>
+                        </form>
 
                         <div className='squareUp'></div>
 

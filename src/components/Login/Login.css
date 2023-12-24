@@ -12,25 +12,69 @@
     box-shadow: 0px 10px 20px rgba(128, 128, 128, 0.615);
     border-radius: 30px;
     font-family: sans-serif; 
-    outline: 5px solid #22a598;
-    
+    outline: 5px inset #4a8fe7;
 }
 
 .loginInput {
     height: 80px;
     width: 240px;
-    font-size: 25px;
+    font-size: 20px;
     margin: 1%;
     color: black;
-    font-weight: bolder;
 }
 
 .loginInput::placeholder {
     color: #A9A3A3;
 }
 
+
+.loginInput:focus {
+    outline: 5px inset #4a8fe7;
+}
+
+
+.loginButton {
+    outline: 5px inset #4a8fe7;
+}
+
 .button {
     width: 60px;
     height: 60px;
     border: none;
+    margin-left: -20px;
+}
+.returnBarLogin {
+    padding: 15px;
+    padding-left: 70px;
+    width: 150px;
+    border-radius: 0 0 50px 0;
+    margin-top: -20px;
+    background-color:#4a8fe7;
+}
+
+.badLoginElement {
+    text-align: center;
+    width: 400px;
+    margin: auto;
+    background-color: white;
+    color: red;
+    margin-top: 10px;
+    font-size: 20px;
+    animation: deleteBadLoginElement 3s forwards;
+}
+
+@keyframes deleteBadLoginElement {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
 }

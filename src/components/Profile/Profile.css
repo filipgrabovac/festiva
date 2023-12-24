@@ -1,0 +1,18 @@
+.profileNavbar {
+    height: 70px;  
+    width: 100%;
+    background-color: #61AEA7;
+}
+
+
+.festivaProfile {
+    background-image: url('D:/Projects/festivaWebApp/festiva/Festiva Logo.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: 150px;
+    margin-top: 7px;
+    height: 55px;
+    width: 55px;
+    border: none;
+    border-radius: 50px;
+}

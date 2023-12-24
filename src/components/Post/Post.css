@@ -1,0 +1,35 @@
+.Post {
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    box-shadow: 10px 10px 20px rgba(128, 128, 128, 0.489);
+    background-color: white;
+    border-radius: 30px;
+    margin: 20px 20px 0px 20px;
+}
+
+img {
+    height: 70%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.InfoBox {
+    display: flex;
+    flex-direction: row;
+    padding-left: 40px;
+    background-color: #515d72d6;
+    flex-wrap: wrap;
+    margin: auto;
+    color: white;
+    width: 90%;
+    margin-top: 8px;
+    border-radius: 20px;
+    font-size: 15px;
+}
+
+.InfoBox p {
+    margin-bottom: 5px;
+    margin-top: 5px;
+}

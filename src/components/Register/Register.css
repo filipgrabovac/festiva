@@ -1,16 +1,21 @@
 .master {
-    background-image: url('D:/Projects/festiva/background.jpg');
-    background-repeat: repeat;
+    background-image: url('D:/Projects/festivaWebApp/festiva/background.jpg');
+    background-repeat: repeat; 
     padding-top: 20px;
-    height: 1080px;
+    height: 730px;
+    overflow-y: hidden;
     width: 100%;
     z-index: -1;
 }
 
 .returnBar {
-    display: flex;
-    justify-content: start;
-    padding-left: 100px;
+    padding: 15px;
+    padding-left: 70px;
+    margin-top: -20px;
+    margin-left: 0px;
+    width: 250px;
+    border-radius: 0 0 50px 0;
+    background-color: #4a8fe7;
 }
 
 .button {
@@ -20,13 +25,14 @@
 }
 
 .FestivaIcon {
-    background-image: url('D:/Projects/festiva/Festiva Logo.jpg');
-    background-size: contain;
+    background-image: url('D:/Projects/festivaWebApp/festiva/Festiva Logo.jpg');
+    background-size: cover;
+    margin-right: 40px;
 } 
 
 .ArrowIcon {
-    background-image: url('D:/Projects/festiva/back arrow.jpg');
-    background-size: contain;
+    background-image: url('D:/Projects/festivaWebApp/festiva/back arrow.jpg');
+    background-size: cover;
 }
 
 .Form {
@@ -42,8 +48,8 @@
     box-shadow: 0px 10px 20px rgba(128, 128, 128, 0.615);
     border-radius: 30px;
     font-family: sans-serif; 
-    outline: 5px solid #22a598;
     z-index: 1;
+    outline: 5px inset #4a8fe7;
 }
 
 .FormAnimation {
@@ -53,14 +59,20 @@
 .input {
     height: 70px;
     width: 240px;
-    font-size: 25px;
+    font-size: 20px;
     margin: 1%;
     color: black;
-    font-weight: bolder;
+}
+.input:focus {
+    outline: 5px inset #4a8fe7;
 }
 
 .button::placeholder {
     color: #A9A3A3;
+}
+
+.buttonRegister {
+    outline: 5px inset #4a8fe7;
 }
 
 .squareDown {
@@ -72,7 +84,8 @@
     margin-top: 140px;
     z-index: 0;
     box-shadow: 10px 10px 10px #2ec4b574;
-    animation: onSquareDownMount 2s forwards;
+    outline: 5px inset #4a8fe7;
+    animation: onSquareDownMount 1.5s forwards;
 }
 
 
@@ -84,7 +97,8 @@
     margin-top: -40px;
     z-index: 0;
     box-shadow: -10px 10px 10px #2ec4b5;
-    animation: onSquareUpMount 2s forwards;
+    outline: 5px inset #4a8fe7;
+    animation: onSquareUpMount 1.5s forwards;
 }
 
 @keyframes onFormMount {
@@ -104,7 +118,7 @@
         transform: translateX(300px) translateY(-200%) ;
     }
     100% {
-        transform: translateX(-50px) translateY(2%) 
+        transform: translateX(-20px) translateY(2%) 
     }
 }
 
@@ -114,6 +128,6 @@
         transform: translateX(-300px) translateY(200%);
     }
     100% {
-        transform: translateX(50px) translateY(-2%);
+        transform: translateX(50px) translateY(-50px);
     }
 }

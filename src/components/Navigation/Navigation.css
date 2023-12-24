@@ -1,45 +1,49 @@
 .Navigation {
     display: flex;
+    flex-direction: row;
     align-items: center;
-    height: 80px;  
+    height: 70px;  
     width: 100%;
     background-color: #61AEA7;
-    box-shadow: 0px 5px 20px#5C7AFF;
-    position:fixed;
+    position: fixed;
+    z-index: 1;
+    box-shadow: 3px 3px 20px rgba(128, 128, 128, 0.553);
+    animation: onNavMount 1.5s forwards;
 }
 
 .festivaLogo {
-    background-image: url('D:/Projects/festiva/Festiva Logo.jpg');
-    background-size:cover;
-    background-position: center;
+    background-image: url('D:/Projects/festivaWebApp/festiva/Festiva Logo.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 55px;
+    flex: 0 0 55px;
     border: none;
-    width: 60px;
-    height: 60px;
     border-radius: 30px;
-    margin-left: 10%;
+    margin-left: 5.7%;
+    margin-right: 10%;
 }
 
 .searchbar {
     background-color: #FFFFFF;
     width: 500px;
-    height: 45px;
+    height: 40px;
     display: flex;
     align-items: center;
     border-radius: 50px;
-    margin-left: 50px;
-    margin-right: 10%;
+    margin-left: 10%;
 }
 
 .searchButton{
     background-color: #5c7aff;
-    background-image: url('D:\Projects\festiva\search button.png');
+    background-image: url('D:/Projects/festivaWebApp/festiva/search button.png');
     background-repeat: no-repeat;
     background-position: center;
+    background-size: contain;
     border: none;
     border-radius: 30px 20px 20px 30px;
-    width: 45px;
-    height: 38px;
-    margin-left: 5px;;
+    width: 40px;
+    height: 33px;
+    margin-left: 5px;
 }
 
 .searchButton:hover {
@@ -48,12 +52,12 @@
 
 .search {
     border: none;
-    border-left: 3px solid #5C7AFF;
+    border-left: 2px solid #5C7AFF;
     font-size: 20px;
     color: #9D9D9D;
     margin-left: 15px;
     padding-left: 15px;
-    width: 40%;
+    width: 300px;
     height: 60%;
 }
 
@@ -63,21 +67,24 @@
 
 .logRegButton {
     margin: auto;
+    margin-left: 10%;
     height: 70px;
     display: flex;
 }
 
 .navButton {
-    background-color: red;
-    width: 150px;
+    width: 130px;
     height: 40px;
     border-radius: 10px;
     border: none;
-    font-size: 20px;
+    font-size: 18px;
     background-color: white;
     color: #5C7AFF;
     font-weight: bolder;
-    box-shadow: 5px 5px 10px #ffffff75;
+    box-shadow: 5px 5px 10px rgba(128, 128, 128, 0.195);
+    cursor: pointer;
+    padding: 8px;
+    text-decoration: none;
 }
 
 .questionMark {
@@ -89,7 +96,9 @@
     border-radius: 10px;
     color: white;
     font-weight: bolder;
-    box-shadow: 0px 10px 10px #5c7aff91;
+    text-align: center;
+    padding: 8px;
+    text-decoration: none;
 }
 
 .dropDownMenu {
@@ -101,7 +110,7 @@
     border-radius: 10px;
     align-items: center;
     align-self: center;
-    box-shadow: 0px 5px 20px#5C7AFF;
+    /* box-shadow: 0px 5px 20px#5C7AFF; */
 }
 
 .dropDownMenu a {
@@ -120,9 +129,6 @@
 }
 
 @keyframes searchButtonAnimation {
-    0% {
-        
-    }
     25% {
         transform: rotate(3deg);
     }
@@ -136,3 +142,13 @@
         
     }
 }
+
+@keyframes onNavMount {
+    0% {
+        transform: translateY(-100px);
+    }
+    50% {
+        scale: 1.001;
+    }
+}
+
