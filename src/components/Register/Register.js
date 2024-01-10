@@ -7,8 +7,11 @@ const Register = ({setLoginState}) => {
     const [email, setEmail] = useState('');
     const [surname, setSurname] = useState('');
     const [nameInputState, setNameInputState] = useState(false);
+    const [userType, setUserType] = useState('poslodavac');
     const [emailPasswordState, setEmailPasswordState] = useState(false);
     const [password, setPassword] = useState('');
+
+
     const navigator = useNavigate();
 
     const handleNameInput = (event) => {
@@ -36,6 +39,7 @@ const Register = ({setLoginState}) => {
     const handlePasswordInput = (event) => {
         setPassword(event.target.value)
     }
+
     const handleRegistration = (event) => {
         if (name && email && password) {
             sessionStorage.setItem('user_email', email);
@@ -46,7 +50,8 @@ const Register = ({setLoginState}) => {
                 user_name: name,
                 user_surname: surname,
                 user_email: email,
-                user_password: password
+                user_password: password,
+                user_type: userType
             })
             })
             .then(res => res.json())
@@ -55,7 +60,7 @@ const Register = ({setLoginState}) => {
                     setLoginState(true);
                     navigator('/');
                 } else {
-                    console.log("smt is wrong");
+                    console.log(res);
                 }
             })
             .catch(err => console.log(err));
@@ -79,14 +84,17 @@ const Register = ({setLoginState}) => {
                         <div className='squareDown'></div>
 
                         <form className='Form'>
+                            
                             <input placeholder="email" type="email" className='bn br3 tc input' value={email} 
                                 onChange={handleEmailInput} required={true}
                             />
                             <input placeholder="lozinka" type="password" className='bn br3 tc input' value={password} 
                                 onChange={handlePasswordInput} required={true}
                             />
-                            <button className="grow mt1 f3 br4 bn mt4 w-75 h-50 b-l buttonRegister" 
-                                onClick={handleRegistration}>Prijava</button>
+                       
+                            
+                            <button className="grow f3 br4 bn w-75 mt4 h-50 b-l buttonRegister" 
+                                onClick={handleRegistration}>Registriraj me!</button>
                         </form> 
 
                         <div className='squareUp'></div>
@@ -97,6 +105,7 @@ const Register = ({setLoginState}) => {
                         <div className='squareDown'></div>
                         
                         <form className='Form FormAnimation'>
+                            
                             <input placeholder="ime" type="name" className='bn br3 tc input' value = {name} 
                                 onChange={handleNameInput} required={true}
                             />

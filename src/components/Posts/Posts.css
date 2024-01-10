@@ -1,5 +1,4 @@
 .Posts {
-    /* height: 600px; */
     background-color: rgba(179, 177, 177, 0.075);
     flex-wrap: wrap;
     overflow: hidden;
@@ -8,4 +7,9 @@
     margin: auto;
     padding: 10px;
     padding-bottom: 40px;
+
+}
+
+.loadingData {
+    margin: auto;
 }

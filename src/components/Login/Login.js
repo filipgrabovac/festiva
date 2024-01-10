@@ -14,6 +14,8 @@ const Login = ({setLoginState}) => {
 
     const handleLogin = (event) => {
         sessionStorage.setItem('user_email', email);
+        sessionStorage.setItem('loginState', true);
+        
         fetch('http://localhost:3000/login', {
           method: 'PUT',
           headers: {'Content-Type': 'application/json'},
