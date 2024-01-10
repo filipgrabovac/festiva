@@ -1,0 +1,170 @@
+.Navigation {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 70px;  
+    width: 100%;
+    background-color: #61AEA7;
+    position: fixed;
+    z-index: 1;
+    box-shadow: 3px 3px 20px rgba(128, 128, 128, 0.553);
+    animation: onNavMount 1.5s forwards;
+}
+
+.festivaLogo {
+    background-image: url('D:/Projects/festivaWebApp/festiva/Festiva Logo.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 55px;
+    flex: 0 0 55px;
+    border: none;
+    border-radius: 30px;
+    margin-left: 5.7%;
+    margin-right: 8%;
+}
+
+.searchbar {
+    background-color: #FFFFFF;
+    width: 500px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    border-radius: 50px;
+    margin-left: 10%;
+}
+
+.searchButton{
+    background-color: #5c7aff;
+    background-image: url('D:/Projects/festivaWebApp/festiva/search button.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border: none;
+    border-radius: 30px 20px 20px 30px;
+    width: 40px;
+    height: 33px;
+    margin-left: 5px;
+}
+
+.searchButton:hover {
+    animation: searchButtonAnimation 1s forwards;
+}
+
+.search {
+    border: none;
+    border-left: 2px solid #5C7AFF;
+    font-size: 20px;
+    color: #9D9D9D;
+    margin-left: 15px;
+    padding-left: 15px;
+    width: 300px;
+    height: 60%;
+}
+
+.search:focus {
+    outline: none;
+}
+
+.logRegButton {
+    margin: auto;
+    margin-left: 10%;
+    height: 70px;
+    display: flex;
+}
+
+.navButton {
+    width: 130px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    font-size: 18px;
+    background-color: white;
+    color: #5C7AFF;
+    font-weight: bolder;
+    box-shadow: 5px 5px 10px rgba(128, 128, 128, 0.195);
+    cursor: pointer;
+    padding: 8px;
+    text-decoration: none;
+}
+
+.questionMark {
+    background-color: #5C7AFF;
+    width: 50px;
+    height: 40px;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: bolder;
+    text-align: center;
+    padding: 8px;
+    text-decoration: none;
+}
+
+.dropDownMenu {
+    display: none;
+    width: 150px;
+    margin-left: 15px;
+    margin-top: -5px;
+    background-color:  #5C7AFF;
+    border-radius: 10px;
+    align-items: center;
+    align-self: center;
+}
+
+.dropDownMenu a {
+    font-size: 20px;
+    font-weight: bolder;
+    color: white;
+    padding: 10px;
+    width: 90%;
+    text-align: center;
+    background-color: #5C7AFF;
+}
+
+.showDDM {
+    display: flex;
+}
+
+.createPost {
+    width: 150px;
+    height: 44px;
+    color: white;
+    background-color: #5C7AFF;
+}
+
+.searchBox {
+    margin: -15px 20px 20px 50px;
+    padding: 30px;
+    position: absolute;
+    width: 500px;
+    height: 300px;
+    background-color: rgba(255, 255, 255, 0.768);
+    border-radius: 0px 0px 20px 20px;
+    z-index: -1;
+}
+
+@keyframes searchButtonAnimation {
+    25% {
+        transform: rotate(3deg);
+    }
+    50% {
+        scale: 0.9;
+    }
+    75% {
+        transform: rotate(-3deg);
+    }
+    100% {
+        
+    }
+}
+
+@keyframes onNavMount {
+    0% {
+        transform: translateY(-100px);
+    }
+    50% {
+        scale: 1.001;
+    }
+}
+

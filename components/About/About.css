@@ -1,0 +1,30 @@
+.About {
+    background: linear-gradient(0.25turn, #627df56a,#627df56a,#627df56a, white);
+    width: 100%;
+    background-image: url('D:/Projects/festivaWebApp/festiva/crowdHomepage.jpg');
+    background-repeat:no-repeat;
+    background-size: 100% 707px;
+    overflow-y: auto;
+    height: 739px;
+}
+
+.Headline {
+    background-color:rgba(255, 255, 255, 0.358);
+    width: 60%;
+    margin: auto;
+    margin-top: 150px;
+    border-radius: 0 50px 0 50px;
+    animation: HeadlineOnMount 1.5s;
+    padding: 20px;
+    box-shadow: 5px 5px 20px gray;
+}
+
+@keyframes HeadlineOnMount {
+    0% {
+        transform: translateX(-100px);
+        background-blend-mode: multiply;
+    }   
+    50% {
+        box-shadow: 10px 10px 40px gray;
+    }
+}
